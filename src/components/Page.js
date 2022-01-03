@@ -1,7 +1,10 @@
 import Picture from "./Picture";
+import Audio from "./Audio";
+import Button from "./Button";
+
 import React, { useState, useEffect } from "react";
 
-export default function Page() {
+function Page() {
   const [channels, setChannels] = useState([]);
 
   async function fetchChannels() {
@@ -23,11 +26,19 @@ export default function Page() {
     init();
   }, []);
 
+  let randomNumber = doRandomNumber(channels.length);
+  function doRandomNumber(max) {
+    return Math.floor(Math.random() * max);
+  }
+  // console.log(randomNumber);
+
   return (
     <div className="App">
-      <Picture channel={channels[0]} />
+      <Picture channel={channels[randomNumber]} />
+      <Audio channel={channels[randomNumber]} />
+      <Button />
     </div>
   );
 }
 
-// export default Page;
+export default Page;
