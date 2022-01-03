@@ -36,7 +36,6 @@ function Page() {
     <div className="App">
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
-      <Button />
     </div>
   );
 }
