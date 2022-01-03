@@ -20,7 +20,6 @@ function Button() {
     console.log("micBtn clicked");
 
     if (!recordingTrue) {
-      setmicrophoneActivator(false);
       recognition.start();
       recordingTrue = true;
     } else {
