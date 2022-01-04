@@ -38,7 +38,6 @@ function Page() {
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
       <Button />
-      {/* <Dictaphone /> */}
     </div>
   );
 }
