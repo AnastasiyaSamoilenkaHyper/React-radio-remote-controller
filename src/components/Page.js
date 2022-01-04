@@ -1,7 +1,6 @@
 import Picture from "./Picture";
 import Audio from "./Audio";
 import Button from "./Button";
-import Dictaphone from "./SpeechRecognition";
 
 import React, { useState, useEffect } from "react";
 
