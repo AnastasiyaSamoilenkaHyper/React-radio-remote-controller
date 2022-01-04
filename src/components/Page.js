@@ -1,6 +1,7 @@
 import Picture from "./Picture";
 import Audio from "./Audio";
 import Button from "./Button";
+import Dictaphone from "./SpeechRecognition";
 
 import React, { useState, useEffect } from "react";
 
@@ -37,6 +38,7 @@ function Page() {
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
       <Button />
+      {/* <Dictaphone /> */}
     </div>
   );
 }
