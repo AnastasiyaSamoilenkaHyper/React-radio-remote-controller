@@ -12,3 +12,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main-image img{
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 1rem;
+}
+
+.main-audio {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+
+.speak-button {
+  margin-top: 1rem ;
+  min-width: 200px;
+  border-radius: 15px;
+  background-color: rgb(91, 3, 233)
+
+}
+
+.speak-button img{
+  max-width: 20px;
+}
+
+.Button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
