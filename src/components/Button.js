@@ -6,21 +6,19 @@ import SpeechRecognition, {
 
 let speechToggle = true;
 
-function nextPage() {
-  window.location.reload(true);
-}
-
 function Button({ channel }) {
+  SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
+  console.log("speech recognition ON");
+
   function speechRecognitionToggle() {
-    if (!speechToggle) {
-      console.log("speech recognition on1");
-      speechToggle = true;
-      SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
-    } else {
+    if (speechToggle) {
       SpeechRecognition.stopListening();
       console.log("Speech recognition stopped");
       speechToggle = false;
-      // SpeechRecognition.startListening({ continuous: false, language: "en-Us" });
+    } else {
+      speechToggle = true;
+      SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
+
     }
   }
 
@@ -52,6 +50,10 @@ function Button({ channel }) {
       matchInterim: true,
     },
   ];
+
+  function nextPage() {
+    window.location.reload(true);
+  }
 
   useEffect(() => {
     console.log("Useeefect");

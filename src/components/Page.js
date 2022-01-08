@@ -39,6 +39,7 @@ function Page() {
 
   return (
     <div className="App">
+      <h1> You have to click somewhere on the screen</h1>
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
       <Button channel={channels[randomNumber]}/>
