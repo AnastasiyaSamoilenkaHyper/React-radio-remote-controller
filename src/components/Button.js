@@ -18,7 +18,6 @@ function Button({ channel }) {
     } else {
       speechToggle = true;
       SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
-
     }
   }
 
@@ -63,21 +62,13 @@ function Button({ channel }) {
 
   return (
     <div className="Button">
-      <button onClick={speechRecognitionToggle}>
+      <button onClick={speechRecognitionToggle} className="speak-button">
         {" "}
-        Speak
         <img src={microphone} className="microphoneOn" />
       </button>
-
-      <form
-        action="https://www.google.com/search"
-        method="get"
-        target="_blank"
-        className="search-form"
-      >
-        {/* <input className="searchInput" name="q" type="text" placeholder="Speak please..." autoComplete="off" autoFocus={true}  /> */}
-        <p>{transcript ? transcript : "Start listening for transcript"}</p>
-      </form>
+      <p style={{ backgroundColor: "white", maxWidth: "100px" }}>
+        {transcript ? transcript : "Start listening for transcript"}
+      </p>
     </div>
   );
 }

@@ -38,7 +38,7 @@ function Page() {
   // console.log(song)
 
   return (
-    <div className="App">
+    <div className="Page">
       <h1> You have to click somewhere on the screen</h1>
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
