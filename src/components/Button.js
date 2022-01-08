@@ -4,21 +4,22 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-let speachToggle = false;
+let speechToggle = true;
 
-function Button() {
-  
+function nextPage() {
+  window.location.reload(true);
+}
 
-  function speachRecognitionToggle() {
-    if (!speachToggle) {
-      console.log("hii")
-      speachToggle = true;
+function Button({ channel }) {
+  function speechRecognitionToggle() {
+    if (!speechToggle) {
+      console.log("speech recognition on1");
+      speechToggle = true;
       SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
     } else {
-      
       SpeechRecognition.stopListening();
-      console.log("Speach");
-      speachToggle = false;
+      console.log("Speech recognition stopped");
+      speechToggle = false;
       // SpeechRecognition.startListening({ continuous: false, language: "en-Us" });
     }
   }
@@ -28,16 +29,26 @@ function Button() {
       alert("Ups, your browser is not supported!");
     }
   }, []);
-
+  let songUrl;
+  if (channel) {
+    // console.log("Speech recognition on")
+    songUrl = channel.liveaudio.url;
+  }
+  let audio = document.querySelector(".main-audio");
   const commands = [
     {
-      command: "Hello",
-      callback: () => alert("You just said hi!!"),
+      command: "play",
+      callback: () => audio.play(),
       matchInterim: true,
     },
     {
       command: "stop",
-      callback: () => alert("You just said stop!!"),
+      callback: () => audio.pause(),
+      matchInterim: true,
+    },
+    {
+      command: "next",
+      callback: () => nextPage(),
       matchInterim: true,
     },
   ];
@@ -50,7 +61,7 @@ function Button() {
 
   return (
     <div className="Button">
-      <button onClick={speachRecognitionToggle}>
+      <button onClick={speechRecognitionToggle}>
         {" "}
         Speak
         <img src={microphone} className="microphoneOn" />

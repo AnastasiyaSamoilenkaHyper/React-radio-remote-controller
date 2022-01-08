@@ -20,7 +20,7 @@ function Page() {
     async function init() {
       const channels = await fetchChannels();
       setChannels(channels);
-      console.log(channels);
+      // console.log(channels);
     }
 
     init();
@@ -30,13 +30,18 @@ function Page() {
   function doRandomNumber(max) {
     return Math.floor(Math.random() * max);
   }
-  // console.log(randomNumber);
+  if (channels[0]) {
+  console.log(channels[0].liveaudio.url);
+    
+  }
+  // let song = channels[0].image;
+  // console.log(song)
 
   return (
     <div className="App">
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
-      <Button />
+      <Button channel={channels[randomNumber]}/>
     </div>
   );
 }
