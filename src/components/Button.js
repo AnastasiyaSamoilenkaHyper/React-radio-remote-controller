@@ -4,19 +4,20 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-let speechToggle = true;
-
 function Button({ channel }) {
   SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
-  console.log("speech recognition ON");
+
+  const [speechToggle, setSpeechToggle] = useState(true);
 
   function speechRecognitionToggle() {
     if (speechToggle) {
       SpeechRecognition.stopListening();
       console.log("Speech recognition stopped");
-      speechToggle = false;
+      setSpeechToggle(false);
     } else {
-      speechToggle = true;
+      setSpeechToggle(true);
+      console.log("speech recognition ON");
+
       SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
     }
   }
@@ -26,11 +27,7 @@ function Button({ channel }) {
       alert("Ups, your browser is not supported!");
     }
   }, []);
-  let songUrl;
-  if (channel) {
-    // console.log("Speech recognition on")
-    songUrl = channel.liveaudio.url;
-  }
+
   let audio = document.querySelector(".main-audio");
   const commands = [
     {
