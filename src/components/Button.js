@@ -4,8 +4,9 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
+SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
+
 function Button({ channel }) {
-  SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
 
   const [speechToggle, setSpeechToggle] = useState(true);
 
