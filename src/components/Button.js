@@ -1,4 +1,4 @@
-import microphone from "./assets/microphone-solid.svg";
+// import microphone from "./microphone-solid.svg";
 import React, { useState, useEffect } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -6,7 +6,7 @@ import SpeechRecognition, {
 
 SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
 
-function Button({ channel }) {
+function Button() {
 
   const [speechToggle, setSpeechToggle] = useState(true);
 
@@ -62,7 +62,7 @@ function Button({ channel }) {
     <div className="Button">
       <button onClick={speechRecognitionToggle} className="speak-button">
         {" "}
-        <img src={microphone} className="microphoneOn" />
+        <img src="/assets/microphone-solid.svg" className="microphoneOn" />
       </button>
       <p style={{ backgroundColor: "white", maxWidth: "100px" }}>
         {transcript ? transcript : "Start listening for transcript"}
