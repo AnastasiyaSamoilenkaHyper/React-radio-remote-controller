@@ -1,5 +1,9 @@
 import './App.css';
-import Page from './components/Page'
+import Page from './components/Main Page/Page'
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
+
 
 function App() {
  

@@ -37,7 +37,13 @@ code {
   max-width: 20px;
 }
 
-.Button{
+/* .Button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.BtnSpeech{
   display: flex;
   flex-direction: column;
   align-items: center;
