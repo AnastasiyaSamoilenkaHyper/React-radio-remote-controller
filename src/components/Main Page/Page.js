@@ -8,7 +8,6 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-
 function Page() {
   SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
   const [channels, setChannels] = useState([]);
@@ -47,26 +46,30 @@ function Page() {
       speechToggle = true;
       SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
       console.log("speech recognition ON");
-
     }
-  }
+  };
+
+  const audioRef = useRef();
 
   return (
     <div className="Page">
       <h1> You have to click somewhere on the screen</h1>
       <Picture channel={channels[randomNumber]} />
-      <Audio channel={channels[randomNumber]} />
-      <div className="BtnSpeech">
-      <Button
-        btnClass={"speak-button"}
-        imgClass={"microphoneOn"}
-        micIconSrc={"/assets/microphone-solid.svg"}
+      <Audio
         channel={channels[randomNumber]}
-        onclick={() => speechRecognitionToggle()}
+        className={"main-audio"}
       />
-      <SpeechRecognitionApp />
-      </div>
       
+      <div className="BtnSpeech">
+        <Button
+          btnClass={"speak-button"}
+          imgClass={"microphoneOn"}
+          micIconSrc={"/assets/microphone-solid.svg"}
+          channel={channels[randomNumber]}
+          onclick={() => speechRecognitionToggle()}
+        />
+        <SpeechRecognitionApp />
+      </div>
     </div>
   );
 }
