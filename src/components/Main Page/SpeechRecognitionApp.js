@@ -13,7 +13,7 @@ const SpeechRecognitionApp = React.forwardRef(({ audioRef }, ref) => {
   }, []);
 
   // let audio = document.querySelector(".main-audio");
-  const audio =  ref
+  const audio =  audioRef
   
   const commands = [
     {
