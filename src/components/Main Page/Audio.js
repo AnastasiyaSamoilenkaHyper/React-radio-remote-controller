@@ -1,9 +1,9 @@
 import React from "react";
 
-function Audio({ channel }) {
+function Audio({ channel, className }) {
   return (
     <div className="audio">
-      <audio controls={true} className="main-audio"  allow="autoplay">
+      <audio controls={true} className={className}  allow="autoplay">
         {channel && (
           <source
             src={channel.liveaudio.url.toString()}
