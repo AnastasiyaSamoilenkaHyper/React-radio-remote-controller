@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+
+import React, {useEffect} from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-function SpeechRecognitionApp({ micIconSrc }) {
+
+function SpeechRecognitionApp({ refProp}) {
 
   useEffect(() => {
     if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
@@ -11,7 +13,9 @@ function SpeechRecognitionApp({ micIconSrc }) {
     }
   }, []);
 
-  let audio = document.querySelector(".main-audio");
+  // let audio = document.querySelector(".main-audio");
+  const audio =  refProp;
+  
   const commands = [
     {
       command: "play",
@@ -35,6 +39,8 @@ function SpeechRecognitionApp({ micIconSrc }) {
   }
   
   const { transcript } = useSpeechRecognition({ commands });
+
+  
 
   return (
     <>

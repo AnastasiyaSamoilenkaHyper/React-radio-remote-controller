@@ -56,6 +56,7 @@ function Page() {
       <h1> You have to click somewhere on the screen</h1>
       <Picture channel={channels[randomNumber]} />
       <Audio
+        ref={audioRef}
         channel={channels[randomNumber]}
         className={"main-audio"}
       />
@@ -68,7 +69,7 @@ function Page() {
           channel={channels[randomNumber]}
           onclick={() => speechRecognitionToggle()}
         />
-        <SpeechRecognitionApp />
+        <SpeechRecognitionApp refProp={audioRef.current}/>
       </div>
     </div>
   );

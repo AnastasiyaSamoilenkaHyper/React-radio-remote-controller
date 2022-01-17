@@ -1,18 +1,23 @@
 import React from "react";
 
-function Audio({ channel, className }) {
+const Audio = React.forwardRef((props, ref) => {
   return (
     <div className="audio">
-      <audio controls={true} className={className}  allow="autoplay">
-        {channel && (
+      <audio
+        ref={ref}
+        controls={true}
+        className={props.className}
+        allow="autoplay"
+      >
+        {props.channel && (
           <source
-            src={channel.liveaudio.url.toString()}
+            src={props.channel.liveaudio.url.toString()}
             type="audio/mpeg"
           ></source>
         )}
       </audio>
     </div>
   );
-}
+});
 
 export default Audio;
