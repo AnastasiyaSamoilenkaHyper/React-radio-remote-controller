@@ -8,7 +8,8 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-function Page() {
+
+function Radio() {
   SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
   const [channels, setChannels] = useState([]);
 
@@ -52,7 +53,7 @@ function Page() {
   const audioRef = useRef();
 
   return (
-    <div className="Page">
+    <div className="Radio">
       <h1> You have to click somewhere on the screen</h1>
       <Picture channel={channels[randomNumber]} />
       <Audio
@@ -75,4 +76,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Radio;
