@@ -6,7 +6,7 @@ function Audio({ channel }) {
       <audio controls={true} className="main-audio"  allow="autoplay">
         {channel && (
           <source
-            src={channel.liveaudio.url.toString()}
+            src={channel.liveaudio.url}
             type="audio/mpeg"
           ></source>
         )}

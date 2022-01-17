@@ -4,7 +4,7 @@ import Button from "./Button";
 
 import React, { useState, useEffect } from "react";
 
-function Page() {
+function Radio() {
   const [channels, setChannels] = useState([]);
 
   async function fetchChannels() {
@@ -38,7 +38,7 @@ function Page() {
   // console.log(song)
 
   return (
-    <div className="Page">
+    <div className="Radio">
       <h1> You have to click somewhere on the screen</h1>
       <Picture channel={channels[randomNumber]} />
       <Audio channel={channels[randomNumber]} />
@@ -47,4 +47,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Radio;
