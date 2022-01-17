@@ -1,7 +1,7 @@
-import Picture from "./Picture";
-import Audio from "./Audio";
-import Button from "./Button";
-import SpeechRecognitionApp from "./SpeechRecognitionApp";
+import Picture from "./Main Page/Picture";
+import Audio from "./Main Page/Audio";
+import Button from "./Main Page/Button";
+import SpeechRecognitionApp from "./Main Page/SpeechRecognitionApp";
 
 import React, { useState, useEffect, useRef } from "react";
 import SpeechRecognition, {
