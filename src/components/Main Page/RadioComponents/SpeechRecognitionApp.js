@@ -1,30 +1,25 @@
-
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
+import { BrowserRouter, Route, Link, Redirect } from "react-router-dom";
 
-function SpeechRecognitionApp({ refProp}) {
-
-  useEffect(() => {
-    if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-      alert("Ups, your browser is not supported!");
-    }
-  }, []);
+function SpeechRecognitionApp({ refProp }) {
+  
 
   // let audio = document.querySelector(".main-audio");
-  const audio =  refProp;
-  
+  // const audio = refProp;
+
   const commands = [
     {
       command: "play",
-      callback: () => audio.play(),
+      callback: () => refProp.play(),
       matchInterim: true,
     },
     {
       command: "stop",
-      callback: () => audio.pause(),
+      callback: () => refProp.pause(),
       matchInterim: true,
     },
     {
@@ -32,15 +27,28 @@ function SpeechRecognitionApp({ refProp}) {
       callback: () => nextPage(),
       matchInterim: true,
     },
+    // {
+    //   command: ["Open *"],
+    //   callback: redirectPage => setRedirectUrl(redirectPage),
+    // },
   ];
+
+  const { transcript } = useSpeechRecognition({ commands });
+  // const [redirectUrl, setRedirectUrl] = useState("");
+
+  // const pages = ["radio", "dogs"];
+  // const urls = {
+  //   radio: "/",
+  //   dogs: "/dogs",
+  // };
+
+  // let redirect = ""
+
+
 
   function nextPage() {
     window.location.reload(true);
   }
-  
-  const { transcript } = useSpeechRecognition({ commands });
-
-  
 
   return (
     <>

@@ -1,7 +1,7 @@
-import Picture from "./Main Page/Picture";
-import Audio from "./Main Page/Audio";
-import Button from "./Main Page/Button";
-import SpeechRecognitionApp from "./Main Page/SpeechRecognitionApp";
+import Picture from "./Main Page/RadioComponents/Picture";
+import Audio from "./Main Page/RadioComponents/Audio";
+import Button from "./Main Page/RadioComponents/Button";
+import SpeechRecognitionApp from "./Main Page/RadioComponents/SpeechRecognitionApp";
 
 import React, { useState, useEffect, useRef } from "react";
 import SpeechRecognition, {
@@ -10,7 +10,6 @@ import SpeechRecognition, {
 
 
 function Radio() {
-  SpeechRecognition.startListening({ continuous: true, language: "en-Us" });
   const [channels, setChannels] = useState([]);
 
   async function fetchChannels() {
