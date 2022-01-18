@@ -1,16 +1,15 @@
 import Picture from "./Main Page/RadioComponents/Picture";
 import Audio from "./Main Page/RadioComponents/Audio";
 import Button from "./Main Page/RadioComponents/Button";
-import SpeechRecognitionApp from "./Main Page/RadioComponents/SpeechRecognitionApp";
 
 import React, { useState, useEffect, useRef } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 
-
 function Radio() {
   const [channels, setChannels] = useState([]);
+  // console.log(transcriptProp);
 
   async function fetchChannels() {
     return fetch(
@@ -60,7 +59,7 @@ function Radio() {
         channel={channels[randomNumber]}
         className={"main-audio"}
       />
-      
+
       <div className="BtnSpeech">
         <Button
           btnClass={"speak-button"}
@@ -69,7 +68,7 @@ function Radio() {
           channel={channels[randomNumber]}
           onclick={() => speechRecognitionToggle()}
         />
-        <SpeechRecognitionApp refProp={audioRef.current}/>
+        
       </div>
     </div>
   );
