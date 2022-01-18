@@ -48,3 +48,14 @@ code {
   flex-direction: column;
   align-items: center;
 }
+
+#links{
+  background-color: yellow;
+  font-weight: 700;
+  padding: 10px;
+}
+
+#links a{
+  margin: 10px;
+  color: black;
+}
