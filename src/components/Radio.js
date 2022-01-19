@@ -65,7 +65,7 @@ function Radio() {
         <Button
           btnClass={"speak-button"}
           imgClass={"microphoneOn"}
-          micIconSrc={"assets/microphone-solid.svg"}
+          micIconSrc={"/assets/microphone-solid.svg"}
           channel={channels[randomNumber]}
           onclick={() => speechRecognitionToggle()}
         />
