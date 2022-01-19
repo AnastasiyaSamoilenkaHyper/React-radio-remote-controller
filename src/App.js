@@ -2,7 +2,7 @@ import "./App.css";
 import Radio from "./components/Radio";
 import Dogs from "./components/Dogs";
 import React, { useState, useEffect, useRef } from "react";
-import { BrowserRouter, Route, Link, Navigate, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Link, Navigate, Routes, HashRouter } from "react-router-dom";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <div id="links">
           <Link to="/radio">Radio</Link>
           <Link to="/dogs">Dogs</Link>
@@ -58,7 +58,7 @@ function App() {
         </Routes>
 
         {redirect}
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
