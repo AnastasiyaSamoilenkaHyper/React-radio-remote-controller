@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/css/main.4222615b.css",
-    "main.js": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/js/main.f1af05b3.js",
-    "index.html": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/index.html",
-    "main.4222615b.css.map": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/css/main.4222615b.css.map",
-    "main.f1af05b3.js.map": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/js/main.f1af05b3.js.map"
+    "main.css": "/React-radio-remote-controller/static/css/main.4222615b.css",
+    "main.js": "/React-radio-remote-controller/static/js/main.f1af05b3.js",
+    "index.html": "/React-radio-remote-controller/index.html",
+    "main.4222615b.css.map": "/React-radio-remote-controller/static/css/main.4222615b.css.map",
+    "main.f1af05b3.js.map": "/React-radio-remote-controller/static/js/main.f1af05b3.js.map"
   },
   "entrypoints": [
     "static/css/main.4222615b.css",
