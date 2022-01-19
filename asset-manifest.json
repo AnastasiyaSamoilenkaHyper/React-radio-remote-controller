@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/css/main.4222615b.css",
+    "main.js": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/js/main.c8952c90.js",
+    "index.html": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/index.html",
+    "main.4222615b.css.map": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/css/main.4222615b.css.map",
+    "main.c8952c90.js.map": "/AnastasiyaSamoilenkaHyper/React-radio-remote-controller/static/js/main.c8952c90.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4222615b.css",
+    "static/js/main.c8952c90.js"
+  ]
+}
