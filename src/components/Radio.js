@@ -65,7 +65,7 @@ function Radio() {
         <Button
           btnClass={"speak-button"}
           imgClass={"microphoneOn"}
-          micIconSrc={"/assets/microphone-solid.svg"}
+          micIconSrc={"/React-radio-remote-controller/assets/microphone-solid.svg"}
           channel={channels[randomNumber]}
           onclick={() => speechRecognitionToggle()}
         />
